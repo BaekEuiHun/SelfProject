@@ -40,10 +40,11 @@ public class QuestionController {
     }
 
     @GetMapping("/question/create")
-    public String questionCreate() {
+    public String questionCreate(QuestionForm questionForm) {
         return "question_form";
     }
 
+    @PostMapping("/question/create")
     public String questionCreate(@Valid QuestionForm questionForm, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "question_form";
