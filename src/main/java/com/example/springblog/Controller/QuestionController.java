@@ -1,6 +1,7 @@
 package com.example.springblog.Controller;
 
 import com.example.springblog.entity.Question;
+import com.example.springblog.form.AnswerForm;
 import com.example.springblog.form.QuestionForm;
 import com.example.springblog.repository.QuestionRepository;
 import com.example.springblog.service.QuestionService;
@@ -33,8 +34,8 @@ public class QuestionController {
     }
 
     @GetMapping(value = "/question/detail/{id}")
-    public String detail(Model model, @PathVariable("id") Integer id) {
-        Question question = this.questionService.getQuestionById(id);
+    public String detail(Model model, @PathVariable("id") Integer id, AnswerForm answerForm) {
+        Question question = this.questionService.getQuestion(id);
         model.addAttribute("question", question);
         return "question_detail";
     }

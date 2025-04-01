@@ -21,7 +21,7 @@ public class QuestionService {
         return questionRepository.findAll();
     }
 
-    public Question getQuestionById(int id) {
+    public Question getQuestion(int id) {
         Optional<Question> question = questionRepository.findById(id);
         if (question.isPresent()) {
             return question.get();
