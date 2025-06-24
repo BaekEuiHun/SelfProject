@@ -3,13 +3,14 @@ package com.example.springblog.user;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RequiredArgsConstructor
-@org.springframework.stereotype.Controller
+@Controller
 @RequestMapping("/user")
 public class UserController {
     private final UserService userService;
@@ -49,6 +50,6 @@ public class UserController {
         }
 
 
-        return "redirect:/";
+        return "redirect:/user/login";
     }
 }
